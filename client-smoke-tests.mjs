@@ -29,7 +29,10 @@ test('Mobile install assets and offline shell cover every local game module',()=
  const html=readFileSync('./public/play/index.html','utf8');
  const manifest=JSON.parse(readFileSync('./public/play/manifest.webmanifest','utf8'));
  assert.equal(manifest.display,'standalone');
- assert.equal(manifest.start_url,'/play/index.html');
+ for(const base of ['https://qa.example/play/','https://qa.example/block-empire/play/']){
+  assert.equal(new URL(manifest.start_url,base).href,base+'index.html');
+  assert.equal(new URL(manifest.scope,base).href,base);
+ }
  assert.ok(html.includes('href="mobile.css?v=2"'));
  assert.ok(html.includes('href="manifest.webmanifest"'));
  const worker=readFileSync('./public/play/sw.js','utf8');

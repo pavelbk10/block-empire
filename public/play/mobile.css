@@ -2,6 +2,7 @@
 .property-stock { display: none; }
 .welcome .creator-credit { margin: 0 0 16px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .welcome .creator-credit bdi { color: var(--mint); font-weight: 600; }
+.static-hosting #online-open, .static-hosting #welcome-online, .static-hosting [data-mobile-action="online-open"] { display: none; }
 
 @media (max-width: 680px) {
   html { scroll-padding-block: 16px; }
