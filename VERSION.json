@@ -1,0 +1,13 @@
+{
+  "title": "BLOCK EMPIRE · The Syndicate",
+  "version": "0.14.0",
+  "source_commit": "6654fffd2d32f1091331c5c36315225e9dc698c6",
+  "source_url": "https://block-empire-pavel.pashkin18.chatgpt.site",
+  "export_date": "2026-10-18",
+  "export_additions": [
+    "Standalone Node 24 HTTP/SQLite launcher",
+    "Windows launcher",
+    "Hebrew getting-started guide",
+    "Local npm start script"
+  ]
+}

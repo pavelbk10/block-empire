@@ -1,0 +1,13 @@
+{
+  "id": "/play/",
+  "name": "BLOCK EMPIRE / THE SYNDICATE",
+  "short_name": "Block Empire",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "/play/index.html",
+  "scope": "/play/",
+  "display": "standalone",
+  "background_color": "#101e27",
+  "theme_color": "#101e27",
+  "icons": [{"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}]
+}

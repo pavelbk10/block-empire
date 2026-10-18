@@ -1,0 +1,2 @@
+export function anchoredZoom(camera,point,factor,center,min=.4,max=6){const next=Math.max(min,Math.min(max,camera.zoom*factor)),ratio=next/camera.zoom;return {zoom:next,panX:point.x-center.x-(point.x-center.x-camera.panX)*ratio,panY:point.y-center.y-(point.y-center.y-camera.panY)*ratio};}
+export function wheelFactor(delta,mode=0,height=500){const pixels=delta*(mode===1?16:mode===2?height:1);return Math.exp(-Math.max(-200,Math.min(200,pixels))*.0018);}
