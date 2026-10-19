@@ -1,7 +1,7 @@
-const CACHE = 'block-empire-mobile-v3';
+const CACHE = 'block-empire-mobile-v4';
 const SHELL = [
   './index.html', './style.css?v=14', './mobile.css?v=2', './app.mjs?v=14',
-  './install.mjs', './mobile-ui.mjs', './manifest.webmanifest', './icon.svg',
+  './install.mjs', './mobile-ui.mjs', './tutorial.mjs', './manifest.webmanifest', './icon.svg',
   './adventures.mjs', './building-identity.mjs', './building-models.mjs',
   './camera.mjs', './city.mjs', './exchange-ui.mjs', './exchange.mjs',
   './game.mjs', './city-missions.mjs', './map-layout.mjs', './property-card.mjs', './rail-effects.mjs',

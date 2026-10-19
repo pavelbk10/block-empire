@@ -3,6 +3,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createGame} from './public/play/game.mjs';
+import {TUTORIAL_STEPS,shouldShowTutorial,saveTutorialPreference} from './public/play/tutorial.mjs';
+test('Interactive tutorial covers the core loop and remembers whether to show again',()=>{
+ const preferences=new Map(),storage={getItem:key=>preferences.get(key)??null,setItem:(key,value)=>preferences.set(key,value)};
+ assert.equal(TUTORIAL_STEPS.length,6);
+ assert.deepEqual(TUTORIAL_STEPS.map(step=>step.target),['.city-canvas','#inspector-actions','.metric-grid','#tab-view','#trivia','#end-turn']);
+ assert.equal(shouldShowTutorial(storage),true);
+ assert.equal(saveTutorialPreference(storage,false),true);assert.equal(shouldShowTutorial(storage),false);
+ assert.equal(saveTutorialPreference(storage,true),true);assert.equal(shouldShowTutorial(storage),true);
+ const blocked={getItem(){throw Error('blocked');},setItem(){throw Error('blocked');}};
+ assert.equal(shouldShowTutorial(blocked),true);assert.equal(saveTutorialPreference(blocked,false),false);
+});
 test('Game setup credits Pavel Barak before the play options',()=>{
  const html=readFileSync('./public/play/index.html','utf8');
  const welcome=html.split('<dialog id="welcome">')[1].split('</dialog>')[0];
